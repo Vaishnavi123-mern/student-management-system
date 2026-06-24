@@ -26,7 +26,7 @@ const upload = multer({ storage });
 
 
 mongoose
-  .connect("mongodb://127.0.0.1:27017/studentdb")
+  .connect("mongodb+srv://vaishnavi:vaishnavi123@cluster0.23en7eq.mongodb.net/studentdb")
   .then(() =>
     console.log("MongoDB Connected")
   )
