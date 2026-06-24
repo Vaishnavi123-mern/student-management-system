@@ -15,7 +15,7 @@ import { Pie, Bar } from "react-chartjs-2";
 
 import Navbar from "../components/Navbar";
 import StudentList from "./StudentList";
-import AddStudent from "./AddStudent";
+//import AddStudent from "./AddStudent";
 
 ChartJS.register(
   ArcElement,

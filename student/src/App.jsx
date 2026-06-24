@@ -20,7 +20,7 @@ function App() {
           element={<EditStudent />}
         />
         <Route
-          path="/edit"
+          path="/add"
           element={<AddStudent />}
         />
 
