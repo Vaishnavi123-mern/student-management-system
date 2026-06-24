@@ -1,0 +1,185 @@
+import { useEffect, useState } from "react";
+import axios from "axios";
+import { FaEdit, FaTrash } from "react-icons/fa";
+
+import { useNavigate } from "react-router-dom";
+
+
+function StudentList() {
+  const [students, setStudents] =
+    useState([]);
+
+  const [search, setSearch] =
+    useState("");
+
+  const getStudents = async () => {
+    const res = await axios.get(
+      "http://localhost:5000/api/students"
+    );
+
+    setStudents(res.data);
+  };
+
+  useEffect(() => {
+    getStudents();
+  }, []);
+
+const navigate = useNavigate();
+
+const editStudent = (student) => {
+  navigate("/edit", {
+    state: student,
+  });
+};
+
+
+
+  const deleteStudent = async (id) => {
+    if (
+      !window.confirm(
+        "Delete Student?"
+      )
+    )
+      return;
+
+    await axios.delete(
+      `http://localhost:5000/api/students/${id}`
+    );
+
+    getStudents();
+  };
+
+  const filteredStudents =
+    students.filter((student) =>
+      student.name
+        .toLowerCase()
+        .includes(
+          search.toLowerCase()
+        )
+    );
+
+  return (
+    <div className="table-container">
+
+      <div className="table-header">
+
+        <h2>Student List</h2>
+
+        <input
+          type="text"
+          placeholder="Search Student..."
+          value={search}
+          onChange={(e) =>
+            setSearch(
+              e.target.value
+            )
+          }
+        />
+
+      </div>
+
+      <table>
+
+        <thead>
+
+          <tr>
+            <th>Photo</th>
+            <th>Name</th>
+            <th>Roll No</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Gender</th>
+            <th>Graduation</th>
+            <th>Action</th>
+          </tr>
+
+        </thead>
+
+        <tbody>
+
+          {filteredStudents.map(
+            (student) => (
+              <tr
+                key={student._id}
+              >
+                <td>
+
+                  <img
+                    src={`http://localhost:5000/uploads/${student.photo}`}
+                    alt=""
+                    width="60"
+                    height="60"
+                    style={{
+                      borderRadius:
+                        "50%",
+                      objectFit:
+                        "cover",
+                    }}
+                  />
+
+                </td>
+
+                <td>
+                  {student.name}
+                </td>
+
+                <td>
+                  {student.rollNo}
+                </td>
+
+               
+
+                <td>
+                  {student.email}
+                </td>
+
+                <td>
+                  {student.phone}
+                </td>
+
+                <td>
+                  {student.gender}
+                </td>
+
+                <td>
+                  {
+                    student.graduation
+                  }
+                </td>
+
+                <td>
+
+                  <button
+  className="edit-btn"
+  onClick={() =>
+    editStudent(student)
+  }
+>
+  <FaEdit />
+</button>
+                  <button
+                    className="delete-btn"
+                    onClick={() =>
+                      deleteStudent(
+                        student._id
+                      )
+                    }
+                  >
+                    <FaTrash />
+                  </button>
+
+                </td>
+
+              </tr>
+            )
+          )}
+
+        </tbody>
+
+      </table>
+
+    </div>
+  );
+}
+
+export default StudentList;
