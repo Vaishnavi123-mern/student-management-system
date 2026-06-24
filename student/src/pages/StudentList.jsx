@@ -75,10 +75,10 @@ function StudentList() {
                   height="60"
                   style={{ borderRadius: "50%", objectFit: "cover" }}
                   onError={(e) => {
-                    // Agar photo load nahi hui (404), toh icon laga do
+                    
                     e.target.src =
                       student.gender === "Female"
-                        ? "https://cdn-icons-png.flaticon.com/512/3135/3135768.png"
+                        ? "https://cdn-icons-png.flaticon.com/512/3237/3237472.png"
                         : "https://cdn-icons-png.flaticon.com/512/3135/3135715.png";
                   }}
                 />
