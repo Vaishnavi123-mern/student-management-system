@@ -35,14 +35,7 @@ function Navbar({ setPage }) {
           Add Student
         </button>
 
-        <button
-          onClick={() => {
-            localStorage.removeItem("login");
-            window.location.href = "/";
-          }}
-        >
-          Logout
-        </button>
+       
 
       </div>
 

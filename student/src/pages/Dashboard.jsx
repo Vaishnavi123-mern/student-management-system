@@ -1,21 +1,10 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-
-import {
-  Chart as ChartJS,
-  ArcElement,
-  Tooltip,
-  Legend,
-  CategoryScale,
-  LinearScale,
-  BarElement,
-} from "chart.js";
-
+import { Chart as ChartJS, ArcElement, Tooltip, Legend, CategoryScale, LinearScale,  BarElement,} from "chart.js";
 import { Pie, Bar } from "react-chartjs-2";
-
 import Navbar from "../components/Navbar";
 import StudentList from "./StudentList";
-//import AddStudent from "./AddStudent";
+import AddStudent from "./AddStudent";
 
 ChartJS.register(
   ArcElement,
@@ -170,11 +159,11 @@ function Dashboard() {
       {page === "students" && (
         <StudentList />
       )}
-{/*
+
       {page === "add" && (
         <AddStudent />
       )}
-        */}
+        
     </>
   );
 }
