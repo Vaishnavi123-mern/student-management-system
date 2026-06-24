@@ -78,7 +78,7 @@ function StudentList() {
                     
                     e.target.src =
                       student.gender === "Female"
-                        ? "https://cdn-icons-png.flaticon.com/512/3135/3135768.png"
+                        ? "https://cdn-icons-png.flaticon.com/512/3237/3237472.png"
                         : "https://cdn-icons-png.flaticon.com/512/3135/3135715.png";
                   }}
                 />
