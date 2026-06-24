@@ -14,7 +14,7 @@ function StudentList() {
 
   const getStudents = async () => {
     const res = await axios.get(
-      "http://localhost:5000/api/students"
+      " https://student-management-system-7mh3.onrender.com/api/students"
     );
 
     setStudents(res.data);
@@ -43,7 +43,7 @@ const editStudent = (student) => {
       return;
 
     await axios.delete(
-      `http://localhost:5000/api/students/${id}`
+      ` https://student-management-system-7mh3.onrender.com/api/students/${id}`
     );
 
     getStudents();
@@ -105,7 +105,7 @@ const editStudent = (student) => {
                 <td>
 
                   <img
-                    src={`http://localhost:5000/uploads/${student.photo}`}
+                    src={` https://student-management-system-7mh3.onrender.com/uploads/${student.photo}`}
                     alt=""
                     width="60"
                     height="60"

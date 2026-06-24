@@ -77,7 +77,7 @@ console.log(student._id);
         }
 
         await axios.put(
-          `http://localhost:5000/api/students/${student._id}`,
+          ` https://student-management-system-7mh3.onrender.com/api/students/${student._id}`,
           formData
         );
 
@@ -106,7 +106,7 @@ console.log(student._id);
       <h2>Edit Student</h2>
 
       <img
-        src={`http://localhost:5000/uploads/${student.photo}`}
+        src={` https://student-management-system-7mh3.onrender.com/uploads/${student.photo}`}
         alt=""
         width="100"
         height="100"

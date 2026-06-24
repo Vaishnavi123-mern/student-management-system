@@ -63,7 +63,7 @@ const [photo, setPhoto] = useState(null);
   );
 
   await axios.post(
-    "http://localhost:5000/api/students",
+    " https://student-management-system-7mh3.onrender.com/api/students",
     formData
   );
 
