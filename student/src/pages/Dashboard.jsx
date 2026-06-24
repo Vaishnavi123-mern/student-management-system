@@ -170,10 +170,11 @@ function Dashboard() {
       {page === "students" && (
         <StudentList />
       )}
-
+{/*
       {page === "add" && (
         <AddStudent />
       )}
+        */}
     </>
   );
 }

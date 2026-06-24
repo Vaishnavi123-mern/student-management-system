@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Dashboard from "./pages/Dashboard";
 import EditStudent from "./pages/EditStudent";
+import AddStudent from "./pages/AddStudent";
 
 function App() {
   return (
@@ -17,6 +18,10 @@ function App() {
         <Route
           path="/edit"
           element={<EditStudent />}
+        />
+        <Route
+          path="/edit"
+          element={<AddStudent />}
         />
 
       </Routes>
